@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args) {
+       Scanner scan = new Scanner(System.in);
+       
+       System.out.println("Digite um numero PAR para uma Media Simples ou um numero IMPAR para Media Ponderada de peso 2 , 3");
+     int i = scan.nextInt();
+    System.out.println("Digite N1: ");
+    int a = scan.nextInt();
+    System.out.println("Digite N2: ");
+    int b = scan.nextInt();
+    System.out.println("Digite N3: ");
+    int c = scan.nextInt();
+    
+    
+    if (i%2 == 0){
+        float media_simples = (a+b+c)/3f;
+        System.out.println("A media Simples é: "+ media_simples);
+    }else{
+        float media_ponderada = (a*2+b*3+c*4)/9f;
+        System.out.println("A Media Ponderada é: " + media_ponderada);
+    }
+    }
+}
