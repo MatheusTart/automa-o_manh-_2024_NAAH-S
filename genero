@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        //9) Faça um programa que leia a idade e o sexo de 5 pessoas, mostrando no final:
+        //a) Quantos homens foram cadastrados
+        //b) Quantas mulheres foram cadastradas
+        //c) A média de idade do grupo
+        //d) A média de idade dos homens
+        //e) Quantas mulheres tem mais de 20 anos
+        
+        int x = 1;
+        int homens_cadastrados = 0;
+        int mulheres_cadastradas = 0;
+        float media_grupo = 0;
+        float media_homens = 0;
+        int m20 = 0;
+        
+        while ( x<=5 ){
+            System.out.print("Digite a Idade: ");
+            int idade = scan.nextInt();
+            System.out.print("Digite 0 Para Masculino e 1 para Feminino: ");
+            int sx = scan.nextInt();
+            
+            media_grupo = media_grupo + idade;
+            if (sx == 0){
+                homens_cadastrados = homens_cadastrados + 1;
+                media_homens = media_homens + idade;
+            }else{
+                mulheres_cadastradas = mulheres_cadastradas + 1;
+                if (idade>20){
+                    m20 = m20 + 1;
+                }
+            }
+            x= x+1;
+        }
+        
+        media_grupo = media_grupo /5;
+        media_homens = media_homens/homens_cadastrados;
+        
+        System.out.println("Homens cadastrados:" + homens_cadastrados);
+        System.out.println("Mulheres cadastrados:" + mulheres_cadastradas);
+        System.out.println("Média Grupo:" + media_grupo);
+        System.out.println("Média Homens:" + media_homens);
+        System.out.println("Mulher com mais de 20:" + m20);
+    }
+}
